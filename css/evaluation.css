@@ -1,0 +1,114 @@
+/*评价*/
+
+body {
+    background: #f3f3f3;
+}
+
+.container {
+    width: 94vw;
+    margin: 0 auto;
+}
+
+.evaluation-main {
+    background: #fff;
+    padding-top: .1rem;
+}
+
+.evaluation-item {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.evaluation-item>div {
+    display: flex;
+    width: 100%;
+    height: .35rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.evaluation-item>div>p {
+    color: #999;
+}
+
+.pingfen-item>div {
+    height: .55rem;
+}
+
+.pingfen-item>div>div {
+    flex: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: .15rem;
+}
+
+.pingfen-item>div>div>p {
+    height: 50%;
+    /*width: 1.35rem;*/
+    /*background: url("../img/icons/pingjia_xingxing_hui@2x.png");
+    background-size: auto 100%;*/
+    position: relative;
+}
+
+.pingfen-item>div>div>p>i {
+    display: inline-block;
+    height: .275rem;
+    width: .27rem;
+    background: url("../img/icons/pingjia_xingxing_hui@2x.png") no-repeat;
+    background-size: 100% 100%;
+    margin: 0 .05rem;
+}
+
+.pingfen-item>div>div>p>i.active {
+    background: url("../img/icons/pingjia_xingxing_hong@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.pingfen-item>div>div>p>span {
+    position: absolute;
+    height: 100%;
+    /*width: 20%;*/
+    top: 0;
+    left: 0;
+    background: url("../img/icons/pingjia_xingxing_hong@2x.png");
+    background-size: auto 100%;
+}
+
+.textarea-box {
+    position: relative;
+}
+
+.textarea-box>p {
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    color: #999;
+}
+
+.textarea-box>textarea {
+    width: 100%;
+    padding: .1rem;
+    color: #999;
+    border: 0;
+    height: 2rem;
+    font-size: .16rem;
+    outline: none;
+}
+
+.textarea-box>textarea:focus {
+    color: #333;
+}
+.submit-btn-box{
+    margin-top: .2rem;
+}
+.submit-btn-box>div>a{
+    display: flex;
+    height: .45rem;
+    background: #92375f;
+    color: #fff;
+    border-radius: .04rem;
+    justify-content: center;
+    align-items: center;
+    font-size: .18rem;
+}

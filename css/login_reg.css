@@ -1,0 +1,218 @@
+html{
+    font-size:100px;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+body{
+    font-size: 0.14rem;
+    background: url("../img/bg.png") no-repeat;
+    background-size: 100%;
+    height: 100%;
+}
+.container{
+    width: 85vw;
+    margin: 0 auto;
+}
+.form-login{
+    padding-top: .8rem;
+}
+.my-form-group{
+    margin-bottom: .15rem;
+    position: relative;
+}
+.my-form-group input{
+    width: 100%;
+    height: 0.45rem;
+    line-height: 0.45rem;
+    outline: none;
+    font-size: .16rem;
+    border: 1px solid #fff;
+    border-radius: .04rem;
+    color: #999;
+    padding-left: 0.33rem;
+    background: #fff url("../img/icons/denglu_yonghu@2x.png") no-repeat .08rem center;
+    background-size: 5% auto;
+}
+.info-box{
+    position: absolute;
+    background: #e91a1a;
+    height: 0.25rem;
+    color: #fff;
+    /*border: 1px solid #ccc;*/
+    border-radius: .04rem;
+    top:  0.48rem;
+    left: 0.45rem;
+    z-index: 100;
+    padding:0 .05rem;
+    display: none;
+}
+.info-box>i{
+    position:absolute;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-bottom-color: #e91a1a;
+    top: -0.08rem;
+    left: .04rem;
+}
+.my-form-group input[type="password"]{
+    background: #fff url("../img/icons/denglu_mima@2x.png") no-repeat .08rem center;
+    background-size: 4% auto;
+}
+.forget-pwd{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.forget-pwd a{
+    color: #f3f3f3;
+}
+.login-btn-box{
+    margin-top: .4rem;
+}
+.login-btn,.reg-btn{
+    display: block;
+    width: 100%;
+    height: 0.45rem;
+    outline: none;
+    font-size: .18rem;
+    border: 1px solid #92375f;
+    border-radius: .04rem;
+    color: #fff;
+    background: #92375f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-btn.active{
+
+}
+.reg-btn{
+    border: 1px solid #92375f;
+    border-radius: .04rem;
+    color: #92375f;
+    background: transparent;
+}
+
+
+/*其他账号登录*/
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.other-login-title{
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.other-login-title div{
+    padding: 0 .08rem;
+}
+.other-login-title p{
+    flex: auto;
+    height: 1px;
+    background: #ccc;
+}
+.other-login-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.other-login-content>div{
+    width: 40%;
+    height: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.other-login-content>div a{
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    background: url("../img/icons/denglu_weixin@2x.png");
+    background-size: 100%;
+}
+.other-login-content>div a.qq-login{
+    background: url("../img/icons/denglu_qq@2x.png");
+    background-size: 100%;
+}
+
+
+
+/*注册样式*/
+.my-form-group .regist-phone{
+    background: #fff url("../img/icons/zhuce_shouji@2x.png") no-repeat .08rem center;
+    background-size: 4% auto;
+}
+.my-form-group .regist-pin{
+    background: #fff url("../img/icons/zhuce_yanzhengma@2x.png") no-repeat .08rem center;
+    background-size: 5% auto;
+}
+/*获取验证码按钮*/
+
+.get-pin{
+    position: absolute;
+    height: 80%;
+    top: 9.9%;
+    right: 1.2%;
+    width: 30%;
+    background: #ccc;
+    color: #fff;
+    border-radius: .04rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.get-pin.active{
+      background: #92375f;
+}
+
+/*阅读协议*/
+
+.read-agreement-box{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.read-agreement{
+    flex: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+
+}
+.read-agreement>a{
+    color: #92375f;
+    margin-left:0.06rem;
+}
+.read-ipt-box{
+    position: relative;
+    line-height: 100%;
+    margin: 0 .08rem;
+}
+.read-ipt-box > span{
+    position: absolute;
+    width: 0.15rem;
+    height: 0.15rem;
+    border: 1px solid #92375f;
+    top: 0;left: 0;
+    z-index: -1;
+    border-radius: .04rem;
+}
+.read-agreement input[type="checkbox"]{
+    width: 0.15rem;
+    height: 0.15rem;
+    opacity: 0;
+
+}
+ .read-ipt-box>span.active{
+    background: url("../img/icons/zhuce_tongyi@2x.png") no-repeat;
+    background-size: 100%;
+}

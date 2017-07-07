@@ -1,0 +1,517 @@
+body{
+    background: #f3f3f3;
+}
+
+.container{
+    width: 94vw;
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+    padding: .1rem 0;
+    background: #92375f;
+}
+.seach-ipt-box{
+    width: 100%;
+    position: relative;
+}
+.seach-ipt-box>input{
+   width: 100%;
+    height: .35rem;
+    outline: none;
+    border: 0;
+    border-radius: .04rem;
+    padding-left: .05rem;
+    color: #999;
+}
+.seach-ipt-box>input:focus{
+    color: #333;
+}
+.seach-ipt-box>span{
+    position: absolute;
+    width: .2rem;
+    height: .2rem;
+    top: 50%;
+    right: 3%;
+    margin-top: -.1rem;
+    background: url("../img/icons/zhanghaoliebiao_sousuo@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/*分类样式*/
+.account-class{
+    width: 100%;
+    background: #fff;
+
+}
+.account-class>div{
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+}
+.account-class>div>div.container{
+    display: flex;
+    justify-content: space-between;
+
+}
+.account-class-item{
+    height: .35rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.account-class-item.active{
+    color: #92375f;
+}
+.account-class-item>i{
+   margin-left: .05rem;
+}
+
+/*模态框*/
+.account-class-modal{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+
+    background: rgba(0,0,0,.5);
+
+}
+.account-modal-content{
+    width: 100%;
+    background: #fff;
+    position: relative;
+    z-index: 1000;
+}
+.account-modal-item{
+    border-bottom: 1px solid #e7e7e7;
+}
+.account-modal-item.active{
+    color: #92375f;
+}
+
+.account-modal-item>div.container{
+    display: flex;
+    height: .4rem;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.account-modal-item>div.container>i{
+    display: none;
+    font-weight: normal;
+    font-size: .16rem;
+}
+.account-modal-item.active>div.container>i{
+    display: block;
+}
+.close-account-modal{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(0,0,0,.5);
+}
+
+/*内容*/
+ .account-content-item{
+     padding: .08rem 0;
+     margin-bottom: .1rem;
+     background: #fff;
+     border-bottom: 1px solid #e7e7e7;
+ }
+.account-content-item h3{
+    width: 97%;
+    padding-right: .04rem;
+    white-space: nowrap;
+    display: flex;
+    overflow: hidden;
+}
+.account-content-item>div>P{
+    margin-bottom: .05rem;
+}
+.account-msg-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.account-msg-item>p{
+    /*width: 90%;*/
+}
+.account-msg-item>b{
+    font-weight: normal;
+    display: inline-block;
+    width: 29%;
+    color: #999;
+}
+.account-msg-item>p>span>i{
+    font-style: normal;
+    display: inline-block;
+    height: .16rem;
+    width: .3rem;
+    border: 1px solid transparent;
+    border-radius: .1rem;
+    text-align: center;
+    line-height: .16rem;
+}
+/*.account-msg-item>p>span>i{*/
+    /*margin-left: .5rem;*/
+/*}*/
+.account-msg-item>p>span>i.ren{
+    border-color: #e64c6c;
+    color: #e64c6c;
+}
+.account-msg-item>p>span>i.bao{
+    border-color: #c93454;
+    color: #c93454;
+}
+.account-msg-item>p>span>i.shang{
+    border-color: #92375f;
+    color: #92375f;
+}
+
+.account-msg-item>i{
+    font-style: normal;
+    display: inline-block;
+    height: .2rem;
+    width: .4rem;
+    border-radius: .1rem;
+    text-align: center;
+    line-height: .2rem;
+    background: linear-gradient(to right ,#901cdb 0, #5614d9 100%);
+    color: #fff;
+}
+.account-msg-item .visi-hide{
+    visibility: hidden;
+}
+/*最后一行单独样式*/
+.self-msg-item{
+    justify-content: space-between;
+}
+.self-msg-item>i{
+    align-self: flex-start;
+    margin-right: .05rem;
+}
+.self-msg-item>i.hide,.account-msg-item i.hide-1{
+   display: none;
+}
+.self-msg-item>p{
+    flex: auto;
+}
+.self-msg-item>p>span>b{
+    display: inline-block;
+    padding: 0.01rem .06rem;
+    background: #92375f;
+    color: #fff;
+    border-radius: .04rem;
+}
+.self-msg-item>a{
+    width: 30%;
+    height: .35rem;
+    background: #92375f;
+    color: #fff;
+    border-radius: .04rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*我的收藏  单独样式*/
+.my-loves-box .account-content-item {
+   padding-bottom: 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+.my-loves-box .my-loves-item{
+    border-top: 1px solid #e7e7e7;
+    margin-top: .1rem;
+}
+.my-loves-box .my-loves-item>div{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+}
+.my-loves-box .my-loves-item span,.my-loves-box .my-loves-item a{
+    display: block;
+    height: .4rem;
+    line-height: .4rem;
+    text-align: center;
+    flex: auto;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    cursor: pointer;
+    font-size: .16rem;
+
+}
+.my-loves-box .my-loves-item a{
+    color: #92375f;
+    border-left: 1px solid #e7e7e7;
+}
+
+
+/*我的发布列表*/
+/*上面分类呢*/
+.my-publish-title{
+    display: flex;
+    align-items: center;
+    height: .45rem;
+    background: #fff;
+}
+.my-publish-title>div{
+    flex: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+.my-publish-title>div.active{
+    color: #92375f;
+    border-bottom-color: #92375f;
+}
+.my-publish-box.content-container{
+    margin-top: .1rem;
+}
+.my-publish-box .text-purple{
+    color: #92375f;
+}
+
+.my-publish-box .my-loves-item>div>a{
+    flex: auto;
+}
+.my-publish-box .rent-msg>a{
+    display: block;
+}
+.my-publish-box .rent-msg>span{
+    display: none;
+}
+.my-publish-box .authenticated .rent-msg>span{
+    display: block;
+}
+.my-publish-box .authenticated .rent-msg>a{
+     display: none;
+}
+
+/*可租用*/
+.publish-can .authenticated .my-loves-item>div>a:first-child{
+    display: none;
+}
+
+/*租用中*/
+.publish-ing .account-content-item{
+    padding-bottom: .08rem;
+}
+
+/*审核中*/
+.publish-verfiy .account-state>p>span:last-child{
+    display: none;
+}
+.publish-verfiy .dont-publish .account-state>p>span:last-child{
+    display: block;
+}
+.publish-verfiy .dont-publish .account-state>p>span:first-child{
+    display: none;
+}
+
+
+.publish-verfiy .dont-publis-reason{
+    display: none;
+}
+.publish-verfiy .dont-publish .dont-publis-reason{
+    display: block;
+}
+
+/*模态框*/
+.my-publis-modal{
+    position: fixed;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    z-index: 1000;
+}
+.my-publis-modal .close-modal{
+    position: absolute;
+    /*top: 0;
+    left: 0;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    */height: .3rem;
+    width: .3rem;
+    background: #fff;
+    border-radius: 50%;;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color:#999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*font-size: .2rem;
+    font-weight: normal;*/
+    background: #fff url("../img/icons/wodedingdan_guanbi@2x.png") no-repeat;
+    background-size: 100% 100%;
+    top: -15%;
+    right: -8%;
+}
+.my-publis-modal .modal-content{
+    background: #fff;
+    width: 80vw;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -40vw;
+    border-radius: .04rem;
+    z-index: 110;
+}
+
+.my-publis-modal .modal-content>div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /*display: none;*/
+}
+.my-publis-modal .modal-content .modal-container{
+    width: 88%;
+    margin: 0 auto;
+
+}
+/*.my-publis-modal .modal-content .modal-container>p{
+    /*margin-bottom: 0.08rem;*/
+/*}*/*
+.my-publis-modal .modal-content .modal-container h3{
+    margin-top: .15rem;
+    font-size: .18rem;
+    margin-bottom: .03rem;
+}
+.my-publis-modal .modal-content .modal-container>div{
+    margin: .15rem 0;
+}
+.my-publis-modal .modal-content .modal-container input{
+    width: 100%;
+    height: .45rem;
+    outline: none;
+    background: #f3f3f3;
+    border: 1px solid #e7e7e7;
+    border-radius: .04rem;
+    -webkit-border-radius: .04rem;
+    -moz-border-radius: .04rem;
+    -ms-border-radius: .04rem;
+    -o-border-radius: .04rem;
+    padding-left: .05rem;
+}
+.my-publis-modal .modal-content .modal-container>a{
+    display: flex;
+    height: .45rem;
+    width: 100%;
+    background: #92375f;
+    color: #fff;
+    border-radius: .04rem;
+    -webkit-border-radius: .04rem;
+    -moz-border-radius: .04rem;
+    -ms-border-radius: .04rem;
+    -o-border-radius: .04rem;
+    justify-content: center;
+    align-items: center;
+    font-size: .16rem;
+    margin-bottom: .2rem;
+     margin-top: .25rem;
+}
+/*.setting-modal .modal-content>div>p{
+    display: flex;
+    height: .45rem;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: pointer;
+}
+ .setting-modal .modal-content>div>p:last-child{
+    border-bottom: 0;
+}*/
+
+
+/*我的订单样式*/
+ .my-loves-box .evaluated .my-loves-item a{
+      display: none;
+ }
+.evaluated .my-loves-item>div>a{
+    display: none;
+}
+.my-loves-box.order-ing .my-loves-item>div{
+    width: 94vw;
+    font-size: .14rem;
+    justify-content: space-between;
+}
+.my-loves-box.order-ing .my-loves-item span,.my-loves-box.order-ing .my-loves-item a{
+    display: inline-block;
+    font-size: .14rem;
+}
+.order-ing .accout-pwd-text{
+    display: none;
+}
+
+.order-ing .pwd-login .accout-pwd-text{
+    display: flex;
+}
+.order-ing  .accout-pwd-text>p:last-child{
+    flex: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.order-ing  .accout-pwd-text>p:last-child button{
+    display: flex;
+    width: .5rem;
+    height: .2rem;
+    line-height: .2rem;
+    border-radius: .9rem;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #92375f;
+    border: 1px solid #92375f;
+   
+}
+.order-ing  .accout-pwd-text>p:last-child button.active{
+    background: #92375f;
+     color: #fff;
+}
+.my-loves-box.order-ing .my-loves-item a{
+    border-left: 0;
+}
+.order-ing .scan-text>p>span>b{
+    font-weight: normal;
+    font-size: .12rem;
+    color: #999;
+}
+.order-ing  .my-loves-item  .scan-text{
+    height: .25rem;
+    width: .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .12rem;
+    
+    background: #92375f;
+    color: #fff;
+}
+.order-ing  .my-loves-item  .scan-text input{
+  display: none;
+}
+.order-ing .pwd-login .scan-text{
+    display: none;
+}

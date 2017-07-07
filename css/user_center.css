@@ -1,0 +1,279 @@
+/*个人中心*/
+
+
+/*上面头像*/
+
+.user-logo-box {
+    width: 100%;
+    height: 2rem;
+    background: url("../img/user_bg.png") no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.user-logo-box>a {
+    display: block;
+    height: 35%;
+    width: .7rem;
+     border-radius: 50%;
+     overflow: hidden;
+    margin-bottom: .1rem;
+}
+
+.user-logo-box>a>img {
+    display: block;
+    height: 100%;
+   
+}
+
+.user-logo-box>span {
+    position: relative;
+    font-size: .16rem;
+}
+
+.user-logo-box>span>i {
+    font-style: normal;
+    position: absolute;
+    display: flex;
+    top: .03rem;
+    right: -.4rem;
+    background: linear-gradient(to right, #dda52e 0, #d2580e 100%);
+    padding: 0 .03rem;
+    line-height: .18rem;
+    font-size: .12rem;
+    border-radius: .04rem;
+    -webkit-border-radius: .04rem;
+    -moz-border-radius: .04rem;
+    -ms-border-radius: .04rem;
+    -o-border-radius: .04rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-center .user-center-item>p {
+    color: #333;
+    font-size: .16rem;
+}
+
+.user-center .user-center-item>i {
+    color: #999;
+    font-size: .18rem;
+}
+
+.user-center .pay-way-item-box:last-child .pay-way-item-btm {
+    border-bottom: 0;
+}
+
+
+/*余额和积分*/
+
+.user-money-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: .1rem;
+    background: #fff
+}
+
+.user-money-text>div {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: .55rem;
+    /*line-height: .2rem;*/
+}
+
+.user-money-text>div>b {
+    font-size: .2rem;
+}
+
+.user-money-text>div>span {
+    color: #999;
+}
+
+.user-center {
+    margin-bottom: .1rem;
+}
+
+
+/*钱包图标*/
+
+.user-wallet .pay-way-item>p>i {
+    background: url(../img/icons/wode_qianbao@2x.png) no-repeat;
+    background-size: 98% 98%;
+}
+
+.my-news .user-wallet .pay-way-item-btm {
+    border-bottom: 0;
+}
+
+
+/*订单图标*/
+
+.user-orders .pay-way-item>p>i {
+    background: url(../img/icons/wode_dingdan@2x.png) no-repeat;
+    background-size: 98% 98%;
+}
+
+
+/*发布图标*/
+
+.user-publish .pay-way-item>p>i {
+    height: .21rem;
+    width: .21rem;
+    background: url(../img/icons/wode_fabu@2x.png) no-repeat;
+    background-size: 100% 100%;
+    margin-right: .09rem;
+}
+
+
+/*收藏图标*/
+
+.user-favorite .pay-way-item>p>i {
+    background: url(../img/icons/wode_shoucang@2x.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*消息图标*/
+
+.user-news .pay-way-item>p>i {
+    background: url(../img/icons/wode_xiaoxi@2x.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*保障计划图标*/
+
+.user-ensure .pay-way-item>p>i {
+    background: url(../img/icons/wode_baozhangjihua@2x.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*成为商家图标*/
+
+.user-business .pay-way-item>p>i {
+    background: url(../img/icons/wode_chengweishangjia@2x.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*设置图标*/
+
+.user-setting .pay-way-item>p>i {
+    background: url(../img/icons/wode_shezhi@2x.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*交易明细样式*/
+
+.buy-detail-body .buy-detail-title {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    margin-bottom: .1rem;
+}
+
+.buy-detail-body .buy-detail-title>div {
+    flex: auto;
+    display: flex;
+    height: .45rem;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+}
+
+.buy-detail-body .buy-detail-title>div.active {
+    border-bottom-color: #92375f;
+}
+
+.buy-detail-main {
+    background: #fff;
+    margin-bottom: .1rem;
+}
+.buy-detail-main>div{
+    display: none;
+}
+.buy-detail-main .buy-detail-item {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+     border-bottom: 1px solid #e7e7e7;
+     height: .55rem;
+}
+.buy-detail-main .buy-detail-item :last-child{
+     border-bottom: 0;
+}
+.buy-detail-main .buy-detail-item>div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: .2rem;
+}
+.buy-detail-main .buy-detail-item>div>span{
+    color: #999;
+}
+.buy-detail-main .buy-detail-item>div>b{
+    font-size: .16rem;
+    font-weight: normal;
+
+}
+.buy-detail-main .buy-detail-item>p>i{
+    display: block;
+    height: .35rem;
+    width: .35rem;
+}
+/*充值图标*/
+.recharge-detail-item>p>i{
+    background: url("../img/icons/jiaoyimingxi_chongzhi@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+/*消费图标*/
+.consume-detail-item>p>i{
+    background: url("../img/icons/jiaoyimingxi_xiaofei@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+/*提现图标*/
+.withdraw-detail-item>p>i{
+    background: url("../img/icons/jiaoyimingxi_tixian@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+.hail-fellow-item>p>i{
+     background: url("../img/icons/jifenxiangqing_yaoqing@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*积分详情样式*/
+.intergral-detail-box .buy-detail-main .buy-detail-item>div:last-child>b{
+    font-size: .14rem;
+    font-weight: normal;
+
+}
+.intergral-detail-box .buy-detail-main .buy-detail-item>div:nth-child(3){
+   align-items: flex-start;
+}
+
+.intergral-detail-box  .buy-detail-title>div{
+    justify-content: flex-start;
+}
+.intergral-detail-box  .buy-detail-title>div b{
+   margin-left: .1rem;
+}
+
+.intergral-detail-box  .buy-detail-title>div>div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

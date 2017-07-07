@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-积分详情</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pay_recharge.css" />
+    <link rel="stylesheet" href="css/user_center.css">
+    <style>
+
+    </style>
+</head>
+
+<body class="buy-detail-body intergral-detail-box">
+    <header>
+        <div class="buy-detail-title">
+            <div>
+                <div class="container">
+
+                    当前积分 <b class="now-integral">0</b>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+    <div class="buy-detail-main">
+        <div class="all-detail" style="display:block;">
+            <div class="container">
+                <!--<div class="buy-detail-item  hail-fellow-item">
+                    <div>
+                        <span>03-22</span>
+                        <span>09:09:00</span>
+                    </div>
+                    <p> <i></i></p>
+                    <div>
+                        <b>+3.00</b>
+                        <span>邀请</span>
+                    </div>
+                    <div>
+
+                        <b>邀请好友</b>
+                    </div>
+                </div>
+                <div class="buy-detail-item consume-detail-item">
+                    <div>
+                        <span>03-22</span>
+                        <span>09:09:00</span>
+                    </div>
+                    <p> <i></i></p>
+                    <div>
+                        <b>+3000.00</b>
+                        <span>消费</span>
+                    </div>
+                    <div>
+
+                        <b>消费</b>
+                    </div>
+                </div>
+                <div class="buy-detail-item  hail-fellow-item">
+                    <div>
+                        <span>03-22</span>
+                        <span>09:09:00</span>
+                    </div>
+                    <p> <i></i></p>
+                    <div>
+                        <b>+3.00</b>
+                        <span>邀请</span>
+                    </div>
+                    <div>
+
+                        <b>邀请好友</b>
+                    </div>
+                </div>
+                <div class="buy-detail-item consume-detail-item">
+                    <div>
+                        <span>03-22</span>
+                        <span>09:09:00</span>
+                    </div>
+                    <p> <i></i></p>
+                    <div>
+                        <b>+3000.00</b>
+                        <span>消费</span>
+                    </div>
+                    <div>
+
+                        <b>消费</b>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="m_js/clipboard.min.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="m_js/public.js"></script>
+    <script>
+        $(function () {
+            //加载数据
+            var form = new FormData();
+            form.append("uid", loginName); // 
+
+            fetch("http://zushouyou.cn/Api/Index/integral", {
+                method: 'POST',
+                //headers: myHeaders,
+                mode: 'cors',
+                cache: 'default',
+                body: form
+            }).then((response) => response.json()).then(function (data) {
+                // console.log(data);
+                if (data.code == 200) {
+                    $('.now-integral').html(data.data.zj)
+                }
+            });
+            //积分明细
+            fetch("http://zushouyou.cn/Api/Index/integral_detailed", {
+                method: 'POST',
+                //headers: myHeaders,
+                mode: 'cors',
+                cache: 'default',
+                body: form
+            }).then((response) => response.json()).then(function (data) {
+                console.log(data);
+                if (data.code == 200) {
+                    var html = '';
+                    for (var i = 0; i < data.data.length; i++) {
+                        var element = data.data[i];
+                        var dateParms = element.time;
+
+
+                        if (dateParms instanceof Date) {
+                            var datatime = dateParms;
+                        }
+                        //判断是否为字符串
+
+                        if ((typeof dateParms == "string") && dateParms.constructor == String) {
+                            //将字符串日期转换为日期格式
+                            var datatime = new Date(parseInt(dateParms) * 1000);
+                        }
+                        html +=
+                            `  <div class="buy-detail-item ${element.lei==1? "hail-fellow-item":"consume-detail-item"}">
+                    <div>
+                      <span>${datatime.getMonth()+1>10? datatime.getMonth()+1:"0"+ (datatime.getMonth()+1)}-${datatime.getDate()>10? datatime.getDate():"0"+ datatime.getDate()}</span>
+                       <span>${datatime.getHours()>10? datatime.getHours():"0"+ datatime.getHours()}:${datatime.getMinutes()>10? datatime.getMinutes():"0"+ datatime.getMinutes()}:${datatime.getSeconds()>10? datatime.getSeconds():"0"+ datatime.getSeconds()}</span>
+                                          
+                    </div>
+                    <p> <i></i></p>
+                    <div>
+                        <b>${element.lei==3?"-":"+"}${element.num}</b>
+                        <span>${element.lei==1?"出租成功":element.lei==2?"租用成功":"投诉成功"}</span>
+                    </div>
+                    <div>
+
+                        <b>${element.lei==1?"出租成功":element.lei==2?"租用成功":"投诉成功"}</b>
+                    </div>
+                </div>`;
+
+
+                    }
+                    $(".all-detail>div").html(html);
+                }
+            });
+
+
+        });
+        $(function () {
+
+            $(".buy-detail-title>div").click(function () {
+                $(this).addClass("active").siblings(".active").removeClass("active");
+                $(".buy-detail-main ." + $(this).data("item")).show().siblings("div").hide();
+            });
+        });
+    </script>
+</body>
+
+</html>

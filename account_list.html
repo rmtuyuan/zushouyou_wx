@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-账号信息列表</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/account_list.css" />
+
+</head>
+
+<body>
+<header>
+    
+   <div class="container">
+       <div class="seach-ipt-box">
+           <input type="text" placeholder="请输入关键字搜索"/>
+           <span></span>
+       </div>
+   </div>
+</header>
+<div class="account-class">
+    <div>
+        <div class="container">
+            <div class="account-class-item modal-select-1 active" data-item="modal-class-1">
+                <span>状态</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="account-class-item modal-select-2 " data-item="modal-class-2">
+                <span>价格</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="account-class-item modal-select-3" data-item="modal-class-3">
+                <span>游戏大区</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+        </div>
+    </div>
+    <div class="account-class-modal">
+        <div class="account-modal-content">
+            <div class="modal-class-1 lease-id-box" data-item="modal-select-1" style="display:block;">
+                 <div class="account-modal-item" data-leaseid="0">
+                    <div class="container">
+                        <span>全部</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item" data-leaseid="1">
+                    <div class="container">
+                        <span>可租用</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item" data-leaseid="2">
+                    <div class="container">
+                        <span>租用中</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <!--<div class="account-modal-item">
+                    <div class="container">
+                        <span>待上架</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>-->
+                <div class="account-modal-item" data-leaseid="3">
+                    <div class="container">
+                        <span>已下架</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-class-2  pid-box" data-item="modal-select-2" style="display:none;">
+                 <div class="account-modal-item " data-pid="0">
+                    <div class="container">
+                        <span>不限</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item " data-pid="1">
+                    <div class="container">
+                        <span>由高到低</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item"  data-pid="2">
+                    <div class="container">
+                        <span>由低到高</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-class-3 game-large-id-box" data-item="modal-select-3" style="display:none;">
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>QQ专区</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>微信专区</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>不限</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <div class="close-account-modal">
+
+        </div>
+    </div>
+</div>
+<div class="list-container">
+    <!--<div class="account-content-item">
+        <div class="container">
+            <h3>微信一区王者荣耀,非我莫属!王者归来！王者归来！</h3>
+            <p>游戏名称/游戏大区/游戏分区</p>
+            <div class="account-msg-item">
+                <b>租户信息:</b><p> <span>被投诉 <span>5</span>次 <i class="ren">认</i> <i class="bao">保</i> <i class="shang">商</i> </span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租金:</b> <p><span>2.1元/次<span></span></span></p><i>特价</i>
+            </div>
+            <div class="account-msg-item ">
+                <b>账号状态:</b> <p> <span>可租用<span></span></span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租用倒计时:</b><p> <span> <b>03</b> : <b>21</b> : <b>29</b></span></p> <a href="account_detail.html">立即租用</a>
+            </div>
+        </div>
+    </div>
+    <div class="account-content-item">
+        <div class="container">
+            <h3>微信一区王者荣耀,非我莫属!王者归来！王者归来！</h3>
+            <p>游戏名称/游戏大区/游戏分区</p>
+            <div class="account-msg-item">
+                <b>租户信息:</b><p> <span>被投诉 <span>5</span>次 <i class="ren">认</i> <i class="bao">保</i> <i class="shang">商</i> </span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租金:</b> <p><span>2.1元/次<span></span></span></p><i class="hide">特价</i>
+            </div>
+            <div class="account-msg-item ">
+                <b>账号状态:</b> <p> <span>可租用<span></span></span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租用倒计时:</b><p> <span> <b>03</b> : <b>21</b> : <b>29</b></span></p> <a href="account_detail.html">立即租用</a>
+            </div>
+        </div>
+    </div>
+    <div class="account-content-item">
+        <div class="container">
+            <h3>微信一区王者荣耀,非我莫属!王者归来！王者归来！</h3>
+            <p>游戏名称/游戏大区/游戏分区</p>
+            <div class="account-msg-item">
+                <b>租户信息:</b><p> <span>被投诉 <span>5</span>次 <i class="ren">认</i> <i class="bao">保</i> <i class="shang">商</i> </span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租金:</b> <p><span>2.1元/次<span></span></span></p><i class="hide">特价</i>
+            </div>
+            <div class="account-msg-item ">
+                <b>账号状态:</b> <p> <span>可租用<span></span></span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租用倒计时:</b><p> <span> <b>03</b> : <b>21</b> : <b>29</b></span></p> <a href="account_detail.html">立即租用</a>
+            </div>
+        </div>
+    </div>
+    <div class="account-content-item">
+        <div class="container">
+            <h3>微信一区王者荣耀,非我莫属!王者归来！王者归来！</h3>
+            <p>游戏名称/游戏大区/游戏分区</p>
+            <div class="account-msg-item">
+                <b>租户信息:</b><p> <span>被投诉 <span>5</span>次 <i class="ren">认</i> <i class="bao">保</i> <i class="shang">商</i> </span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租金:</b> <p><span>2.1元/次<span></span></span></p><i class="hide">特价</i>
+            </div>
+            <div class="account-msg-item ">
+                <b>账号状态:</b> <p> <span>可租用<span></span></span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租用倒计时:</b><p> <span> <b>03</b> : <b>21</b> : <b>29</b></span></p> <a href="account_detail.html">立即租用</a>
+            </div>
+        </div>
+    </div>
+    <div class="account-content-item">
+        <div class="container">
+            <h3>微信一区王者荣耀,非我莫属!王者归来！王者归来！</h3>
+            <p>游戏名称/游戏大区/游戏分区</p>
+            <div class="account-msg-item">
+                <b>租户信息:</b><p> <span>被投诉 <span>5</span>次 <i class="ren">认</i> <i class="bao">保</i> <i class="shang">商</i> </span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租金:</b> <p><span>2.1元/次<span></span></span></p><i class="hide">特价</i>
+            </div>
+            <div class="account-msg-item ">
+                <b>账号状态:</b> <p> <span>可租用<span></span></span></p>
+            </div>
+            <div class="account-msg-item self-msg-item">
+                <b>租用倒计时:</b><p> <span> <b>03</b> : <b>21</b> : <b>29</b></span></p> <a href="account_detail.html">立即租用</a>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+ <script src="js/jquery.cookie.js"></script>
+<script src="js/fetch.js"></script>
+<script src="m_js/public.js"></script>
+<script src="m_js/account_list.js"></script>
+<script>
+    // $(".account-class-item").click(function () {
+    //     $(this).addClass("active").siblings(".active").removeClass("active");
+    //     $(".account-modal-content ."+$(this).data("item")).show().siblings().hide().parents(".account-class-modal").show();
+    //     $("body").addClass("overflow-hidden");
+
+
+    // });
+    // $(".close-account-modal").click(function () {
+    //     $(this).parents(".account-class-modal").hide();
+    //     $("body").removeClass("overflow-hidden");
+    // });
+//     $(".account-modal-content").on("click",".account-modal-item", function () {
+//         $(this).addClass("active").siblings(".active").removeClass("active");
+// //        $(this).find("span").html();
+//         $(".account-class ."+$(this).parent("div").data("item")).find("span").html($(this).find("span").html());
+//         $(this).parents(".account-class-modal").hide();
+//         $("body").removeClass("overflow-hidden");
+//         //ajax 更新页面内容
+//     })
+</script>
+</body>
+
+</html>

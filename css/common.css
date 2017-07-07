@@ -1,0 +1,105 @@
+
+html{
+    font-size:100px;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+
+body{
+    font-size: 0.14rem;
+    margin: 0;
+    background: #fff;
+    font-family: 'Microsoft YaHei';
+
+    line-height: 0.24rem;
+    color: #333;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+   
+}
+body.overflow-hidden{
+    overflow: hidden;
+}
+em,var{
+    font-weight: normal;
+    font-style: normal;
+}
+div{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul,span,ol,dl,dd,h1,h2,h3,h4,h5,p,input,button,br,i,textarea{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul,ol{
+    list-style: none;
+}
+input,button{
+    font-family: "Microsoft YaHei";
+}
+a{
+    /*color: #333;*/
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /*font-size: 14px;*/
+}
+a:hover{
+    text-decoration: none;
+}
+a:link{
+    text-decoration: none;
+    outline: none;
+}
+.clearfloat:after{
+    content: ' ';
+    display: table;
+    height: 0;
+    clear: both;
+}
+
+button{
+    outline: none;
+    border: 0;
+}
+
+.link{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.overflow{
+    overflow: hidden;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.orange{
+    color: #fd521d;
+}
+/*.text-blue{*/
+    /*color: #0eb7e1;*/
+/*}*/
+/*.bg-blue{*/
+    /*background: #00a8fb;*/
+/*}*/
+/*.bg-orange{*/
+    /*background: #fd521d;*/
+/*}*/
+/*.bg-gray{*/
+    /*background: #bbb;*/
+/*}*/
+
+
+/*页脚分页*/

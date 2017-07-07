@@ -1,0 +1,402 @@
+body{
+    background: #f3f3f3;
+}
+.container{
+    width: 92vw;
+    margin: 0 auto;
+}
+/*上部分内容*/
+.content-box{
+    margin-top: .1rem;
+    background: #fff;
+}
+.content-box-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: .35rem;
+
+}
+.content-box-item>p{
+    color: #999;
+}
+
+/*下面支付方式样式*/
+
+.pay-way-box{
+    margin-top: .1rem;
+    background: #fff;
+}
+
+.pay-way-text{
+    height: .45rem;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: center;
+    color: #999;
+    align-items: center;
+}
+.pay-way-item{
+    height: .45rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+}
+.pay-way-item:last-child{
+    border-bottom: 0;
+}
+.pay-way-item>p{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.pay-way-item>p>i{
+    display: inline-block;
+    height: .25rem;
+    width: .25rem;
+    margin-right: .1rem;
+}
+.pay-way-item.pay-wx>p>i{
+    background: url("../img/icons/zhifu_weixin@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+.pay-way-item.pay-zfb>p>i{
+    background: url("../img/icons/zhifu_zhifubao@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+.pay-way-item.pay-cft>p>i{
+    background: url("../img/icons/zhifu_caifutong@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+.pay-way-item.pay-ye>p>i{
+    background: url("../img/icons/zhifu_zhanghuyue@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+.pay-way-item>div{
+    position: relative;
+    height: .2rem;
+    width: .2rem;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+.pay-way-item>div.active{
+    background: url("../img/icons/zhifu_xuanze@2x.png") no-repeat ;
+    background-size: 100% 100%;
+    border-color: #92375f;
+}
+.pay-way-item>div>input{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+
+/*支付按钮*/
+.pay-btn-box{
+    margin-top: .5rem;
+    margin-bottom: .2rem;
+
+}
+.pay-btn-box a{
+    display: block;
+    width: 100%;
+    height: .45rem;background: #92375f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .18rem;
+    border-radius: .04rem;
+}
+
+
+/*充值页面单独样式*/
+.recharge-content-box{
+    height: .55rem;
+}
+.recharge-content-box>input{
+    flex: auto;
+    height: 100%;
+    border: 0;
+    outline: none;
+    color: #999;
+    margin-left: .2rem;
+}
+.recharge-content-box>input:focus{
+    color: #333;
+}
+
+
+/*公告样式*/
+.notice-box .pay-way-item>p>i{
+    position: relative;
+    height: .2rem;
+    width: .2rem;
+    background: url("../img/icons/gonggao_xiaoxi@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+.notice-box .pay-way-item>p>i>span{
+    position: absolute;
+    width: .11rem;
+    height: .11rem;
+    border-radius: 50%;
+    background: #1b075e;
+    border: 1px solid #fff;
+    top: -0.05rem;
+    right: -0.05rem;
+    display: none;
+}
+.notice-box .pay-way-item.not-read>p>i>span{
+    display: block;
+}
+
+.notice-box .pay-way-item>a{
+    color: #999;
+    flex: auto;
+    text-align: right;
+}
+.notice-box .pay-way-item>a>i{
+    font-size: .2rem;
+}
+
+/*开通服务*/
+.open-service>.open-time{
+    justify-content: flex-start;
+}
+
+
+/*我的消息样式*/
+.my-news .pay-way-item-box{
+    position: relative ;
+
+}
+.my-news .my-news-front{
+    position: relative;
+    left: 0;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    z-index: 100;
+    background: #fff;
+}
+.my-news .my-news-back{
+    position: absolute;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    right: 0;
+    border-bottom: 1px solid #e7e7e7;
+    background: #ddd;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-news .my-news-back>span{
+    display: block;
+    height: .35rem;
+    width: 80%;
+    background: #92375f;
+    color: #fff;
+    border-radius: .04rem;
+    -webkit-border-radius: .04rem;
+    -moz-border-radius: .04rem;
+    -ms-border-radius: .04rem;
+    -o-border-radius: .04rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-news  .pay-way-item-top>span{
+    color:#999 ;
+}
+.my-news  .pay-way-item-top b{
+   font-size: .16rem;
+}
+.my-news .pay-way-item-btm{
+    display: flex;
+    margin-left: 4vw;
+    border-bottom: 1px solid #e7e7e7;
+    padding-right: 4vw;
+}
+.my-news .pay-way-item-btm>p{
+   width: .25rem;
+   height: 100%;
+   margin-right: .1rem;
+}
+.my-news  .pay-way-item-btm>div{
+    padding-bottom: .03rem;
+}
+/*设置样式*/
+
+.setting-box .pay-way-item>a{
+    display: block;
+    height: .45rem;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    /*color: #999;*/
+    align-items: center;
+}
+.setting-box .pay-way-item>a>p{
+    color: #333;
+}
+
+/*switch 按钮*/
+.mui-switch {
+  width: 52px;
+  height: 31px;
+  position: relative;
+  border: 1px solid #dfdfdf;
+  background-color: #fdfdfd;
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-clip: content-box;
+  display: inline-block;
+  -webkit-appearance: none;
+  user-select: none;
+  outline: none; }
+  .mui-switch:before {
+    content: '';
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+  .mui-switch:checked {
+    border-color: #92375f;
+    box-shadow: #92375f 0 0 0 16px inset;
+    background-color: #92375f; }
+    .mui-switch:checked:before {
+      left: 21px; }
+  .mui-switch.mui-switch-animbg {
+    transition: background-color ease 0.4s; }
+    .mui-switch.mui-switch-animbg:before {
+      transition: left 0.3s; }
+    .mui-switch.mui-switch-animbg:checked {
+      box-shadow: #dfdfdf 0 0 0 0 inset;
+      background-color: #92375f;
+      transition: border-color 0.4s, background-color ease 0.4s; }
+      .mui-switch.mui-switch-animbg:checked:before {
+        transition: left 0.3s; }
+  .mui-switch.mui-switch-anim {
+    transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s; }
+    .mui-switch.mui-switch-anim:before {
+      transition: left 0.3s; }
+    .mui-switch.mui-switch-anim:checked {
+      box-shadow: #92375f 0 0 0 16px inset;
+      background-color: #92375f;
+      transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s; }
+      .mui-switch.mui-switch-anim:checked:before {
+        transition: left 0.3s; }
+
+.setting-box .pay-way-item label{
+    display: flex;
+    align-items: center;
+}
+
+
+/*模态框*/
+.setting-modal{
+    position: fixed;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    z-index: 1000;
+}
+.setting-modal .close-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.setting-modal .modal-content{
+    background: #fff;
+    width: 60vw;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -30vw;
+    border-radius: .04rem;
+    z-index: 110;
+}
+
+.setting-modal .modal-content>div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+.setting-modal .modal-content>div>p{
+    display: flex;
+    height: .45rem;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: pointer;
+}
+ .setting-modal .modal-content>div>p:last-child{
+    border-bottom: 0;
+}
+
+.setting-modal .modal-content .modal-1>p{
+    border-bottom: 0;
+
+}
+.setting-modal .modal-content .modal-1>p>b{
+    font-size: .18rem;
+}
+.setting-modal .modal-content .modal-1>span{
+    color: #999;
+    font-size: .12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;                                           
+}
+.setting-modal .modal-content .modal-1>p>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+.setting-modal .modal-content .modal-2>p>a{
+    flex: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+.setting-modal .modal-content .modal-2>p>a:first-child{
+    color: #92375f;
+}
+/*模态框*/

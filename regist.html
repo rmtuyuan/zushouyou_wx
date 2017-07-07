@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-注册</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/login_reg.css" />
+
+</head>
+
+<body>
+<div class="form-login">
+    <div class="container">
+        <form action="" >
+            <div class="my-form-group">
+                <input type="number" class="regist-phone" autofocus required  id="reg_phone" placeholder="请输入手机号"/>
+                <p class="info-box">
+                    <i></i>
+                    <span>手机号格式不正确</span>
+                </p>
+                <a href="#" class="get-pin active">获取验证码</a>
+            </div>
+            <div class="my-form-group">
+                <input type="text" class="regist-pin" id="reg_pin" required placeholder="请输入验证码"/>
+                <p class="info-box">
+                    <i></i>
+                    <span>验证码不正确</span>
+                </p>
+            </div>
+            <div class="my-form-group">
+                <input type="password" class="login-pwd" id="reg_pwd" required placeholder="请输入密码"/>
+                <p class="info-box">
+                    <i></i>
+                    <span>手机号或密码不正确</span>
+                </p>
+            </div>
+            <div class="my-form-group read-agreement-box">
+                <div class="read-agreement">
+                    <div class="read-ipt-box">
+                        <input type="checkbox" id="read_agreement_chk"/>
+                        <span class="   "></span>
+                    </div>
+                    <label for="read_agreement_chk">我已阅读用户</label>
+                    <a href="agreement.html">注册协议</a>
+                </div>
+            </div>
+            <!--<div class="my-form-group login-btn-box">-->
+                <!--<a href="#" class="login-btn" id="login_btn">登录</a>-->
+            <!--</div>-->
+            <div class="my-form-group ">
+                <a href="#" class="login-btn" id="reg_btn">注册</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--<footer>-->
+    <!--<div class="other-login-box">-->
+        <!--<div class="container">-->
+            <!--<div class="other-login-title">-->
+                <!--<p></p>-->
+                <!--<div>其他账号登录</div>-->
+                <!--<p></p>-->
+            <!--</div>-->
+            <!--<div class="other-login-content">-->
+                <!--<div><a href="#" class="qq-login"></a></div>-->
+                <!--<div><a href="#" class="wx-login"></a></div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</footer>-->
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/jquery.cookie.js"></script>
+ <script src="js/fetch.js"></script>
+<script src="m_js/public.js"></script>
+<script src="m_js/login_reg.js"></script>
+<script src="js/bannerList.js"></script>
+<script>
+    var oHeight = $(document).height(); //浏览器当前的高度
+    $(window).resize(function(){
+
+        if($(document).height() < oHeight){
+
+            $("footer").css("position","static");
+        }else{
+
+            $("footer").css("position","absolute");
+        }
+
+    });
+</script>
+</body>
+
+</html>

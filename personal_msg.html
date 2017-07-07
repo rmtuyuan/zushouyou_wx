@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-个人信息</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/personal_msg.css">
+    <style>
+     
+    </style>
+</head>
+
+<body>
+    <div class="personal-msg-main">
+        <div class="updata-img-box">
+            <div class="container">
+
+                <div class="updata-img-btn">
+                    <input type="file" id="user_logo_file" value="">
+                    <img src="img/touxiang_hei.png" class="user-logo-img" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="msg-content-box msg-1">
+            <div class="container">
+                <!--<div class="msg-content-item">
+                    <p>昵称</p>
+                    <p><input type="text" name="nickname" placeholder="请输入昵称"></p>
+                </div>
+                <div class="msg-content-item">
+                    <p>真实姓名</p>
+                    <p><input type="text" name="username" placeholder="请输入姓名"></p>
+                </div>
+                <div class="msg-content-item">
+                    <p>性别</p>
+                    <p>
+                        <span class="modal-show modal-choice-1" data-item="modal-1">保密</span>
+                        <input type="text" class="actived" name="sex" value="3" style="display:none" >
+                        </p>
+                </div>
+                <div class="msg-content-item">
+                    <p>年龄</p>
+                    <p><input type="number" name="birth" placeholder="请输入年龄"></p>
+                </div>-->
+            </div>
+        </div>
+        <div class="msg-content-box msg-2">
+            <div class="container">
+                <!--<div class="msg-content-item">
+                    <p>身份二维码</p>
+                    <p><i class="fa  fa-qrcode modal-show" data-item="modal-2"></i></p>
+                </div>
+                <div class="msg-content-item">
+                    <p>邮箱</p>
+                    <p><input type="email" name="email" placeholder="请输入邮箱"></p>
+                </div>
+                <div class="msg-content-item">
+                    <p>手机号</p>
+                    <p class="phone-box"> 
+                        <span ></span>
+                        <input type="number"  style="display:none" placeholder="请输入手机号" >
+                    </p>
+                </div>
+                <div class="msg-content-item">
+                    <p>身份证号</p>
+                    <p><input type="text" name="shen" minlength="18" maxlength="18" placeholder="请输入身份证号"></p>
+                </div>
+                <div class="msg-content-item zima-xinyong">
+                    <p>芝麻信用</p>
+                    <p class="authentication">
+                        <span>已认证</span>
+                        <a href="#" class="text-purple">未认证</a>
+                    </p>
+                </div>-->
+            </div>
+        </div>
+        <div class="msg-content-box msg-3">
+            <div class="container">
+                <div class="msg-content-item sf-msg-content-item">
+                    <p>所在省市</p>
+                    <p><span class="modal-show add-select" data-item="modal-3">请选择</span>
+                         <input type="text" class="province" name="provinceid" value="" style="display:none" >
+                          <input type="text"  class="city" name="cityid" value="" style="display:none" >
+                    </p>
+                </div>
+                <div class="msg-content-item tea-msg-content-item">
+                    <p><textarea rows="" cols="" name="address" placeholder="现住址"></textarea></p>
+                </div>
+            </div>
+        </div>
+        <div class="msg-content-box msg-4">
+            <div class="container">
+                <div class="msg-content-item tea-msg-content-item">
+                    <p><textarea rows="" cols="" name="description" maxlength="30" placeholder="个性签名(不超过30个字)"></textarea></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="save-btn-box">
+        <div class="container">
+            <a href="#" class="save-btn" >保存</a>
+        </div>
+    </div>
+    <div class="modal-select setting-modal">
+        <div class="modal-content modal-content-mid" style="display:none;">
+            <div class="choice-modal  modal-1" data-item='modal-choice-1'>
+                <p data-sex="1">男</p>
+                <p data-sex="2">女</p>
+                 <p data-sex="3">保密</p>
+               
+            </div>
+            <div class="choice-modal modal-2">
+                <p>我的二维码</p>
+                <div>
+                    <img src="img/icons/erweima@2x.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="modal-content modal-content-btm">
+            <div class="modal-content-front _panel-box modal-3">
+                
+
+            </div>
+            <div class="modal-content-back _panel-box ">
+                <div class="active">全部</div>
+                <p>东城区</p>
+                <p>东城区</p>
+                <p>东城区</p>
+                <p>东城区</p>
+                <p>东城区</p>
+            </div>
+        </div>
+        <div class="close-modal">
+
+        </div>
+    </div>
+
+    <script src="js/jquery-1.11.3.js"></script>
+     <!--<script src="m_js/updataImg.js"></script>-->
+       <script src="js/jquery.cookie.js"></script>
+    <script src="m_js/clipboard.min.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="m_js/public.js"></script>
+ 
+    <script src="m_js/personal_msg.js"></script>
+       <script src="m_js/xb_scroll.js"></script>
+    <script>
+    
+    </script>
+</body>
+
+</html>

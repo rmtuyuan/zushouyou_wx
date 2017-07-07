@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-我的消息</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pay_recharge.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="pay-way-box notice-box my-news">
+        <div class="pay-way-content">
+            <!--<div class="pay-way-item-box">
+                <div class="my-news-front">
+                    <div class="container">
+                        <div class="pay-way-item pay-way-item-top not-read">
+                            <p> <i><span></span></i><b>系统消息</b></p>
+                            <span>03-28  09:09:12</span>
+                        </div>
+                    </div>
+                    <div class=" pay-way-item-btm">
+                        <p></p>
+                        <div>萨科技的拉看世界卡斯加离开的世界卡斯加离开的角暗里撒来得及案例</div>
+                    </div>
+                </div>
+                <div class="my-news-back">
+                    <span>删除</span>
+                </div>
+            </div>
+            <div class="pay-way-item-box">
+                <div class="my-news-front">
+                    <div class="container">
+                        <div class="pay-way-item pay-way-item-top not-read">
+                            <p> <i><span></span></i><b>系统消息</b></p>
+                            <span>03-28  09:09:12</span>
+                        </div>
+                    </div>
+                    <div class=" pay-way-item-btm">
+                        <p></p>
+                        <div>萨科技的拉看世界卡斯加离开的角暗里撒来得及案例</div>
+                    </div>
+                </div>
+                <div class="my-news-back">
+                    <span>删除</span>
+                </div>
+            </div>
+            <div class="pay-way-item-box">
+                <div class="my-news-front">
+                    <div class="container">
+                        <div class="pay-way-item pay-way-item-top not-read">
+                            <p> <i><span></span></i><b>系统消息</b></p>
+                            <span>03-28  09:09:12</span>
+                        </div>
+                    </div>
+                    <div class=" pay-way-item-btm">
+                        <p></p>
+                        <div>萨科技的拉看世界卡斯加离开的角暗里撒来得及案例</div>
+                    </div>
+                </div>
+                <div class="my-news-back">
+                    <span>删除</span>
+                </div>
+            </div>
+            <div class="pay-way-item-box">
+                <div class="my-news-front">
+                    <div class="container">
+                        <div class="pay-way-item pay-way-item-top not-read">
+                            <p> <i><span></span></i><b>系统消息</b></p>
+                            <span>03-28  09:09:12</span>
+                        </div>
+                    </div>
+                    <div class=" pay-way-item-btm">
+                        <p></p>
+                        <div>萨科技角暗里撒来得及案例</div>
+                    </div>
+                </div>
+                <div class="my-news-back">
+                    <span>删除</span>
+                </div>
+            </div>
+            <div class="pay-way-item-box">
+                <div class="my-news-front">
+                    <div class="container">
+                        <div class="pay-way-item pay-way-item-top not-read">
+                            <p> <i><span></span></i><b>系统消息</b></p>
+                            <span>03-28  09:09:12</span>
+                        </div>
+                    </div>
+                    <div class=" pay-way-item-btm">
+                        <p></p>
+                        <div>萨科技暗里撒来得及案例</div>
+                    </div>
+                </div>
+                <div class="my-news-back">
+                    <span>删除</span>
+                </div>
+            </div>
+            <div class="pay-way-item-box">
+                <div class="my-news-front">
+                    <div class="container">
+                        <div class="pay-way-item pay-way-item-top not-read">
+                            <p> <i><span></span></i><b>系统消息</b></p>
+                            <span>03-28  09:09:12</span>
+                        </div>
+                    </div>
+                    <div class=" pay-way-item-btm">
+                        <p></p>
+                        <div>萨科技的拉看世界卡斯加离开的角暗里撒来得及案例</div>
+                    </div>
+                </div>
+                <div class="my-news-back">
+                    <span>删除</span>
+                </div>
+            </div>-->
+        </div>
+    </div>
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="m_js/public.js"></script>
+    <script>
+        $(function () {  
+            //加载数据
+             var form = new FormData();
+                form.append("uid", loginName); // 
+               
+                fetch("http://zushouyou.cn/Api/index/message", {
+                    method: 'POST',
+                    //headers: myHeaders,
+                    mode: 'cors',
+                    cache: 'default',
+                    body: form
+                }).then((response) => response.json()).then(function (data) {
+                     console.log(data)
+                    if (data.code == 200) {
+                        var all_html='';
+                        for (var i = 0; i < data.data.length; i++) {
+                            var element = data.data[i];
+                               var dateParms = element.addtime;
+
+
+                    if (dateParms instanceof Date) {
+                        var datatime = dateParms;
+                    }
+                    //判断是否为字符串
+
+                    if ((typeof dateParms == "string") && dateParms.constructor == String) {
+
+                        //将字符串日期转换为日期格式
+                        var datatime = new Date(parseInt(dateParms) * 1000);
+
+                    }
+                            all_html+=` <div class="pay-way-item-box">
+                <div class="my-news-front">
+                    <div class="container">
+                        <div class="pay-way-item pay-way-item-top not-read">
+                            <p> <i><span></span></i><b>系统消息</b></p>
+                                  
+                            <span>${datatime.getMonth()+1>=10? datatime.getMonth()+1:"0"+ (datatime.getMonth()+1)}-${datatime.getDate()>=10? datatime.getDate():"0"+ datatime.getDate()}  ${datatime.getHours()>=10? datatime.getHours():"0"+ datatime.getHours()}:${datatime.getMinutes()>=10? datatime.getMinutes():"0"+ datatime.getMinutes()}:${datatime.getSeconds()>10? datatime.getSeconds():"0"+ datatime.getSeconds()}</span>
+                        </div>
+                    </div>
+                    <div class=" pay-way-item-btm">
+                        <p></p>
+                        <div>${element.content}</div>
+                    </div>
+                </div>
+                <div class="my-news-back">
+                    <span>删除</span>
+                </div>
+            </div>`;
+                        }
+                    }
+
+
+                    $(".my-news .pay-way-content").html(all_html)
+                });
+
+
+
+
+             var a = $(".my-news-front");
+        var touch_px = 0;
+        var rate = 0;
+
+        $(".my-news .pay-way-content").on('touchstart', '.my-news-front', function (ev) {
+            ev.preventDefault();
+            var touch = ev.originalEvent.changedTouches[0];
+            touch_px = touch.pageX;
+            console.log(touch_px);
+        });
+        $(".my-news .pay-way-content").on('touchmove', '.my-news-front', function (ev) {
+            ev.preventDefault();
+            var touch = ev.originalEvent.changedTouches[0];
+            rate = touch_px - touch.pageX;
+            if (rate > 0) {
+                $(this).stop(true);
+                $(this).css("left", "-25%");
+
+            } else {
+                //$(this).stop(true);
+                $(this).stop(true);
+                $(this).css("left", "0");
+            }
+        });
+        $(".my-news .pay-way-content").on('touchend', '.my-news-front', function (ev) {
+            ev.preventDefault();
+            $(this).stop(true);
+        });
+
+        //点击删除
+        $(".my-news .pay-way-content").on('click', '.my-news-back>span', function () {
+
+
+            $(this).parents('.pay-way-item-box').remove();
+        });
+
+
+        });
+
+
+       
+
+    </script>
+</body>
+
+</html>

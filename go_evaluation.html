@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-评价</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/evaluation.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="evaluation-main">
+        <div class="container">
+            <div class="evaluation-item evaluation-content">
+                <!--<div>
+                    <p>角色名称</p> <span>iashdi</span></div>
+                <div>
+                    <p>租用时间</p> <span>2017-1-2 03:20:22</span></div>
+                <div>
+                    <p>租用费用</p> <span>394.22元</span></div>-->
+            </div>
+            <div class="evaluation-item pingfen-item">
+                <div>
+                    <p>评分</p>
+                    <div>
+                        <p><span></span> <i data-item="1"></i><i data-item="2"></i><i data-item="3"></i><i data-item="4"></i>
+                            <i data-item="5"></i>
+                        </p>
+                    </div>
+                    <span></span>
+                </div>
+
+            </div>
+            <div class="textarea-box">
+                <textarea name="" maxlength="200" placeholder="请输入评论"></textarea>
+                <p><span class="m-count">0</span>/ <span>200</span></p>
+            </div>
+
+        </div>
+    </div>
+    <div class="submit-btn-box">
+        <div class="container">
+            <a href="#" class="submit-btn">提交</a>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="m_js/clipboard.min.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="m_js/public.js"></script>
+    <script>
+        // $(".pingfen-item>div>div").on("click touchstart", "p", function (e) {
+        //     var mX, mY, distance;
+        //     var $element = $('.pingfen-item>div>div>p')
+
+        //     function calculateDistance(elem, mouseX, mouseY) {
+        //         return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left + (elem.width() / 2)), 2) +
+        //             Math.pow(mouseY - (elem.offset().top + (elem.height() / 2)), 2)));
+        //     }
+
+        //     mX = e.pageX;
+        //     mY = e.pageY;
+        //     distance = calculateDistance($element, mX, mY);
+        //     console.log(distance);
+        // })
+        $(function () {
+            var id = $.getUrlParam("id");
+            var translate = 0;
+            var form1 = new FormData();
+
+            form1.append("uid", loginName); // 
+            form1.append("page", 1);
+
+            fetch("http://zushouyou.cn/Api/Index/completed", {
+                method: 'POST',
+                //headers: myHeaders,
+                mode: 'cors',
+                cache: 'default',
+                body: form1
+            }).then((response) => response.json()).then(function (data) {
+                //console.log(data);
+                if (data.code == 200) {
+                    for (var i = 0; i < data.data.length; i++) {
+                        var element = data.data[i];
+                         var dateParms = element.starttime;
+
+
+                    if (dateParms instanceof Date) {
+                        var datatime = dateParms;
+                    }
+                    //判断是否为字符串
+
+                    if ((typeof dateParms == "string") && dateParms.constructor == String) {
+
+                        //将字符串日期转换为日期格式
+                        var datatime = new Date(parseInt(dateParms) * 1000);
+
+                    }
+                        if(element.id==id){
+                            $(".evaluation-content").html(` <div>
+                    <p>角色名称</p> <span>${element.game_name}</span></div>
+                <div>
+                    <p>租用时间</p> <span>${datatime.getFullYear()}-${datatime.getMonth()+1>10? datatime.getMonth()+1:"0"+ (datatime.getMonth()+1)}-${datatime.getDate()>10? datatime.getDate():"0"+ datatime.getDate()}
+                            &nbsp; ${datatime.getHours()>=10? datatime.getHours():"0"+ datatime.getHours()}:${datatime.getMinutes()>10? datatime.getMinutes():"0"+ datatime.getMinutes()}:${datatime.getSeconds()>10? datatime.getSeconds():"0"+ datatime.getSeconds()}
+                             </span></div>
+                <div>
+                    <p>租用费用</p> <span> ${element.waste}元</span></div>`);
+                        }
+                    }
+                }
+            })
+
+
+
+            $(".pingfen-item>div>div>p").on("click touchstart", "i", function (e) {
+                var leng = parseInt($(this).data("item"));
+                translate = leng;
+                if (leng > 4) {
+                    $(".pingfen-item>div>span").html("好评");
+                } else if (leng >= 3) {
+                    $(".pingfen-item>div>span").html("中评");
+                } else {
+                    $(".pingfen-item>div>span").html("差评");
+                }
+                $(".pingfen-item>div>div>p>i").removeClass("active");
+                for (var i = 0; i < leng; i++) {
+                    var element = $(".pingfen-item>div>div>p>i")[i];
+                    $(element).addClass("active");
+
+                }
+            });
+            var content_ok = false;
+            $(".textarea-box>textarea").keyup(function () {
+                var leng = $(this).val().length;
+                if (leng <= 200) {
+                    $(".m-count").html(leng)
+                }
+                if (leng > 0) {
+                    content_ok = true;
+                } else {
+                    content_ok = false;
+                }
+
+            });
+            $(".textarea-box>textarea").blur(function () {
+                var leng = $(this).val().length;
+                if (leng <= 200) {
+                    $(".m-count").html(leng)
+                }
+                if (leng > 0) {
+                    content_ok = true;
+                    $(".textarea-box>textarea").css("color", "#333");
+                } else {
+                    content_ok = false;
+                }
+
+            });
+
+
+            $(".submit-btn").click(function (e) {
+                e.preventDefault();
+                if (content_ok) {
+                    if (translate) {
+                        var form2 = new FormData();
+
+                        form2.append("uid", loginName); // 
+                        form2.append("id", id);
+                        form2.append("translate", translate); // 
+                        fetch("http://zushouyou.cn/Api/Index/go_evaluation", {
+                            method: 'POST',
+                            //headers: myHeaders,
+                            mode: 'cors',
+                            cache: 'default',
+                            body: form2
+                        }).then((response) => response.json()).then(function (data) {
+                            console.log(data);
+                            window.location.href='my_orders.html';
+                        })
+                    }
+                } else {
+                    $(".textarea-box>textarea").css("color", "#f00");
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-我的钱包</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/money.css" />
+
+</head>
+
+<body class="my-wallet">
+    <header>
+        <div  class="my-wallet-header">
+           <div class="container">
+                <p><span>账户余额(元)</span> <a href="buy_detail.html">交易详情</a></p>
+            <h2 class="money-box">0</h2>
+           </div>
+        </div>
+    </header>
+    <div class="my-wallet-btn-box">
+        <a href="recharge.html"><i></i>充值</a>
+         <a href="withdraw_money.html"><i></i>提现</a>
+    </div>
+    <div class="my-wallet-text-box">
+        <div class="my-wallet-text-item">
+            <div class="container">
+                <p>今日收入</p>
+                <span class="today-money-box">0元</span>
+            </div>
+        </div>
+        <div class="my-wallet-text-item">
+            <div class="container">
+                <p>积分</p>
+                <a href="integral_detail.html" class="ji-box"> 0   <i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+  <script src="js/jquery.cookie.js"></script>
+    <script src="m_js/clipboard.min.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="m_js/public.js"></script>
+    
+    <script>
+        $(function () { 
+              var form2 = new FormData();
+            form2.append("uid", loginName); // 
+             fetch("http://zushouyou.cn/Api/Index/wallet", {
+                method: 'POST',
+                //headers: myHeaders,
+                mode: 'cors',
+                cache: 'default',
+                body: form2
+            }).then((response) => response.json()).then(function (data) {
+                //console.log(data);
+                if(data.code==200){
+                    $(".money-box").html(data.data.wallet);
+                    $(".today-money-box").html(data.data.jr+"元");
+                    $(".ji-box").html(data.data.integral);
+                }
+            });
+         });
+    </script>
+</body>
+
+</html>

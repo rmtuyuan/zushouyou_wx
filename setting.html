@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-设置</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pay_recharge.css" />
+
+</head>
+
+<body>
+
+<div class="pay-way-box notice-box setting-box">
+    <div class="pay-way-content">
+        <div class="container">
+            <div class="pay-way-item not-read">
+                <p> <span>是否接受平台推送消息</span></p>
+                <label><input class="mui-switch mui-switch-animbg" type="checkbox" checked></label>
+            </div>
+            <div class="pay-way-item not-read">
+                 <a href="feedback.html">
+                    <p> <span>意见反馈</span></p>
+            
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+            <div class="pay-way-item pay-cft ">
+                <a href="about_us.html">
+                    <p> <span>关于我们</span></p>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+            <div class="pay-way-item pay-ye ">
+                 <a href="#" class="setting-modal-show" data-item="modal-1">
+                   <p> <span>联系客服</span></p>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+             <div class="pay-way-item pay-ye ">
+                 <a href="reset_pwd.html" class="">
+                    <p> <span>修改密码</span></p>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+             <div class="pay-way-item pay-ye ">
+                 <a href="#" class="setting-modal-show" data-item="modal-2">
+                    <p> <span>退出当前账户</span></p>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-select setting-modal">
+        <div class="modal-content">
+            <div data-item="modal-1" class="choice-modal modal-1">
+                <p>
+                   <b>400-820-6668</b>
+                </p>
+               <span>服务时间 &nbsp; 每天8:00--20:00</span>
+                <p>
+                    <a href="tel:4008206668" class="call-phone">
+                        拨打
+                    </a>
+                </p>
+                
+            </div>
+            <!--其他弹框-->
+            <div class="choice-modal modal-2">
+                <p>
+                   确认退出当前账户？
+                </p>
+                <p>
+                    <a href="#" class="quit-ok">退出</a>
+                    <a href="#" class="quit-cancel">取消</a>
+                </p>
+
+            </div>
+        
+        </div>
+        <div class="close-modal">
+
+        </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+ <script src="js/jquery.cookie.js"></script>
+<script src="js/fetch.js"></script>
+<script src="m_js/public.js"></script>
+<script>
+    //点击弹出模态框
+    $('.setting-box').on("click",".setting-modal-show",function(){
+            $("body").addClass("overflow-hidden");
+            $("."+$(this).data("item")).show().siblings("div.choice-modal").hide();
+            $(".modal-select").show();
+    });
+    //点击关闭模态框 
+     $(".close-modal").click(function () {
+            $(this).parents(".setting-modal").hide();
+            $("body").removeClass("overflow-hidden");
+    });
+    //点击取消
+     $(".quit-cancel").click(function () {
+            $(this).parents(".setting-modal").hide();
+            $("body").removeClass("overflow-hidden");
+    });
+    // 点击退出
+      $(".quit-ok").click(function () {
+          //清楚cookie
+               $.cookie(cookie_name,'') ;//清空cookie
+            //    回到首页
+            window.location.href='index.html ';
+            $(this).parents(".setting-modal").hide();
+            $("body").removeClass("overflow-hidden");
+    });
+    //选择 
+    // 点击拨打
+     $(".call-phone").click(function () {
+            $(this).parents(".setting-modal").hide();
+            $("body").removeClass("overflow-hidden");
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-充值</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pay_recharge.css" />
+
+</head>
+
+<body>
+    <div class="content-box">
+        <div class="container">
+            <div class="content-box-item recharge-content-box">
+                <span>金额</span>
+                <input type="number" min="0" placeholder="请输入整数充值金额" />
+            </div>
+
+        </div>
+
+    </div>
+    <div class="pay-way-box">
+        <div class="pay-way-text">
+            选择支付方式
+        </div>
+        <div class="pay-way-content">
+            <div class="container">
+                <div class="pay-way-item pay-wx ">
+                    <p> <i></i><span>微信支付</span></p>
+                    <div class="">
+                        <input type="radio" name="pay-way" class="pay-wx" data-item='wx-pay' />
+                    </div>
+                </div>
+                <div class="pay-way-item pay-zfb ">
+                    <p> <i></i><span>支付宝支付</span></p>
+                    <div class="">
+                        <input type="radio" name="pay-way" class='pay-zfb' data-item='al-pay' />
+                    </div>
+                </div>
+                <div class="pay-way-item pay-cft ">
+                    <p> <i></i><span>财付通</span></p>
+                    <div class="">
+                        <input type="radio" name="pay-way" class='pay-qq' data-item='qq-pay' />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="pay-btn-box">
+        <div class="container">
+            <a href="#" class="now-pay-btn">确定</a>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="m_js/clipboard.min.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="m_js/public.js"></script>
+    <script>
+        $(function () {
+            osid = null;
+            osid_ok = false;
+            $(".pay-way-box").on("change", ".pay-way-item input[type='radio']", function () {
+                // $(".pay-way-item input[type='radio']").change(function () {
+                //console.log(221)
+                if ($(this).is(":checked")) {
+                    if ($(this).parents(".container").hasClass("open-service-money")) {
+                        osid = $(this).data("id");
+                        osid_ok = true;
+                    }
+                    $(this).parent("div").addClass("active").parents(".pay-way-item").siblings().find(
+                        "div").removeClass("active");
+                }
+
+                //点击
+            });
+
+            //点击支付
+
+            $(".now-pay-btn").click(function (e) {
+                e.preventDefault();
+                var ua = navigator.userAgent.toLowerCase();
+                if ($(".pay-way-item input:checked").hasClass("pay-zfb")) {
+                    //支付宝支付
+                    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                        alert("微信浏览器不支持支付宝");
+                    } else {
+                        var pay = 3;
+                        var form = new FormData();
+                        form.append("uid", loginName); // 
+                        form.append("commodity_id", 1); //
+                        form.append("pay", pay); //  
+                        fetch("http://zushouyou.cn/Api/Index/phone_order", {
+                            method: 'POST',
+                            //headers: myHeaders,
+                            mode: 'cors',
+                            cache: 'default',
+                            body: form
+                        }).then((response) => response.json()).then(function (data) {
+                            //console.log(data);
+                            if (data.code == 200) {
+                                alert("支付宝支付成功");
+                                //window.history.back();
+                                console.log(data);
+
+                                window.location.href =
+                                    `http://zushouyou.cn/Vendor/wappay/pay.php?ordername=${data.data.receive_name}&total_fee=${data.data.price}&attach=${data.data.subject}&trade_no=${data.data.orderid}`;
+                            } else {
+                                alert("支付宝支付失败");
+                            }
+                        });
+                    }
+
+                } else if ($(".pay-way-item input:checked").hasClass("pay-wx")) {
+                    //微信支付
+                    var pay = 1;
+                    var form = new FormData();
+                    form.append("uid", loginName); //
+                    form.append("pay", pay); //   
+                    form.append("commodity_id", 1); // 
+                    fetch("http://zushouyou.cn/Api/Index/order_wallet", {
+                        method: 'POST',
+                        //headers: myHeaders,
+                        mode: 'cors',
+                        cache: 'default',
+                        body: form
+                    }).then((response) => response.json()).then(function (data) {
+                        //console.log(data);
+                        if (data.code == 200) {
+                            alert("微信支付成功");
+                            window.history.back();
+                        } else {
+                            alert("微信支付失败");
+                        }
+                    });
+                } else {
+                    //财付通支付
+                    var pay = 4;
+                    var form = new FormData();
+                    form.append("uid", loginName); // 
+                    form.append("pay", pay); //  
+                    form.append("commodity_id", 1); // 
+                    fetch("http://zushouyou.cn/Api/Index/order_wallet", {
+                        method: 'POST',
+                        //headers: myHeaders,
+                        mode: 'cors',
+                        cache: 'default',
+                        body: form
+                    }).then((response) => response.json()).then(function (data) {
+                        //console.log(data);
+                        if (data.code == 200) {
+                            alert("财付通支付成功");
+                            window.history.back();
+                        } else {
+                            alert("财付通支付失败");
+                        }
+                    });
+                }
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-我的订单</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/account_list.css" />
+
+</head>
+
+<body>
+    <!--<header>
+    <div class="container">
+        <div class="seach-ipt-box">
+            <input type="text" placeholder="请输入关键字搜索"/>
+            <span></span>
+        </div>
+    </div>
+</header>-->
+    <!--
+<div class="account-class">
+    <div>
+        <div class="container">
+            <div class="account-class-item modal-select-1 active" data-item="modal-class-1">
+                <span>状态</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="account-class-item modal-select-2 " data-item="modal-class-2">
+                <span>价格</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="account-class-item modal-select-3" data-item="modal-class-3">
+                <span>游戏大区</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+        </div>
+    </div>
+    <div class="account-class-modal">
+        <div class="account-modal-content">
+            <div class="modal-class-1" data-item="modal-select-1" style="display:block;">
+                <div class="account-modal-item  active">
+                    <div class="container">
+                        <span>可租用</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>租用中</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>待上架</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>已下架</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-class-2" data-item="modal-select-2" style="display:none;">
+                <div class="account-modal-item active">
+                    <div class="container">
+                        <span>由高到低</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>由低到高</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-class-3"data-item="modal-select-3" style="display:none;">
+                <div class="account-modal-item active">
+                    <div class="container">
+                        <span>QQ专区</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>微信专区</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div class="account-modal-item">
+                    <div class="container">
+                        <span>不限</span>
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="close-account-modal">
+
+        </div>
+    </div>
+</div>
+-->
+    <!--我的发布上面分类-->
+    <div class="my-publish-title">
+
+        <div class="active" data-item="publish-ing">使用中</div>
+        <div data-item="publish-verfiy">已完成</div>
+    </div>
+    <div class="my-publish-box content-container ">
+
+
+        <div class="list-container publish-ing  my-loves-box order-ing" style="display:block;">
+
+           
+        </div>
+        <div class="list-container publish-verfiy  my-loves-box order-done" style="display:none;">
+           
+
+        </div>
+    </div>
+
+    <!--<div class="modal-select my-publis-modal ">
+        <div class="modal-content">
+            <div data-item="modal-1" class="choice-modal modal-1">
+                <div class="modal-container">
+                    <h3>游戏名称/游戏大区/游戏分区</h3>
+                    <p>登录账号: <span>167263798</span></p>
+                    <p>登录密码: <span>askdhjjk</span></p>
+                    <div>
+                        <input type="password" placeholder="请输入新密码">
+                    </div>
+                    <div>
+                        <input type="password" placeholder="再次输入新密码">
+                    </div>
+                    <a href="#">提交修改并上架</a>
+                </div>
+            </div>
+            <!--其他弹框-->
+            <div class="close-modal">
+                <!--<i class="fa  fa-close"></i>-->
+
+            </div>
+        </div>
+        <!--<div class="close-modal">
+
+        </div>-->
+    <!--</div>-->
+    <script src="js/jquery-1.11.3.js"></script>
+     <script src="js/jquery.cookie.js"></script>
+    <script src="m_js/clipboard.min.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="m_js/public.js"></script>
+    <script src="m_js/clipboard.min.js"></script>
+    <script src="js/zepto.js"></script>
+     <script src="js/qrcode.lib.min.js"></script>
+    <script src="js/qrcode.js"></script>
+    <script src="m_js/my_orders.js"></script>  
+
+    <script>
+        //扫描二维码
+   
+         $(function() {
+            Qrcode.init($('[node-type=qr-btn]'));
+         });
+      
+
+        //删除发布
+        $(".my-loves-box").on("click", ".my-loves-item span", function () {
+            $(this).parents(".account-content-item").remove();
+        });
+
+        //点击分类切换内容
+        $(".my-publish-title>div").click(function () {
+            $(this).addClass("active").siblings(".active").removeClass("active");
+            $(".my-publish-box ." + $(this).data("item")).show().siblings(".list-container").hide();
+        });
+        //点击修改密码
+        $(".pwd-modal-show").click(function () {
+            $("body").addClass("overflow-hidden");
+            //更新内容
+            $(".my-publis-modal").show();
+
+        });
+        //点击关闭
+        $(".my-publis-modal .close-modal").click(function () {
+            $("body").removeClass("overflow-hidden");
+            $(this).parents(".my-publis-modal").hide();
+            //清空内容
+        });
+
+        //点击复制
+        
+        $(".copy-btn").on("mousedown touchstart",function () {  
+            $(this).addClass("active")
+        });
+         $(".copy-btn").on("mouseup touchend",function () {  
+            $(this).removeClass("active")
+        });
+        var clipboard = new Clipboard('.copy-btn');
+
+      
+    </script>
+</body>
+
+</html>

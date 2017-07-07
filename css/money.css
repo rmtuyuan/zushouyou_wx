@@ -1,0 +1,329 @@
+/*我的钱包样式*/
+body.my-wallet{
+    background: #f3f3f3;
+}
+.container{
+    width: 94vw;
+    margin: 0 auto;
+}
+.my-wallet-header{
+    width: 100%;
+    
+    background: #92375f;
+}
+.my-wallet-header>div{
+     /*padding-bottom: .2rem;*/
+}
+.my-wallet-header p{
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*height: 40%;*/
+    padding-top: .2rem;
+    /*padding-bottom: .1rem;*/
+}
+.my-wallet-header p span{
+    opacity: .7;
+}
+.my-wallet-header p a{
+     color: #fff;
+}
+.my-wallet-header h2{
+    color: #fff;
+     height: .95rem;
+     font-size: .38rem;
+     display: flex;
+     align-items: center;
+     padding-bottom: .1rem;
+    
+}
+
+.my-wallet-btn-box{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+     height: .55rem;
+     margin-bottom: .1rem;
+     background: #fff;
+}
+.my-wallet-btn-box a{
+    flex: auto;
+    display: flex;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: .18rem;
+}
+.my-wallet-btn-box a:last-child{
+    border-left: 1px solid #e7e7e7;
+}
+.my-wallet-btn-box a i{
+    display: inline-flex;
+    height: .25rem;
+    width: .25rem;
+    background: url("../img/icons/jiaoyimingxi_chongzhi@2x.png") no-repeat;
+    background-size: 100% 100%;
+    margin-right: .1rem;
+}
+.my-wallet-btn-box a:last-child i{
+     background: url("../img/icons/jiaoyimingxi_tixian@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+.my-wallet-text-box{
+    background: #fff;
+}
+.my-wallet-text-item{
+    border-bottom: 1px solid #e7e7e7;
+}
+.my-wallet-text-item>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: .55rem;
+}
+.my-wallet-text-item>div>span{
+    color: #f24d1b;
+}
+.my-wallet-text-item>div>a{
+    color: #999;
+    flex: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.my-wallet-text-item>div>a i{
+    font-size: .16rem;
+    margin-left: .05rem;
+}
+
+
+/*提现样式*/
+.withdraw-title{
+    display: flex;
+    align-items: center;
+    color: #333;
+    background: #fff;
+  
+}
+.withdraw-title>div{
+    flex: auto;
+    height: .55rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .16rem;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+}
+.withdraw-title>div span{
+    opacity: .6;
+}
+.withdraw-title>div.active{
+    color: #92375f;
+    border-bottom-color: #92375f;
+}
+.withdraw-title>div.active span{
+    opacity: 1;
+}
+
+
+/*下面内容*/
+.withdraw-content{
+    background: #fff;
+    margin: .1rem 0;
+}
+.withdraw-item{
+    display: flex;
+    align-items: center;
+    height: .45rem;
+    font-size: .16rem;
+     border-bottom: 1px solid #e7e7e7;
+}
+.withdraw-item>p{
+    width: 28%;
+
+}
+.withdraw-item>input{
+    flex: auto;
+    height: 100%;
+    outline: none;
+    border: 0;
+    
+}
+.text-purple{
+    color: #92375f;
+}
+
+
+.withdraw-btn-box-chk{
+    display: flex;
+    align-items: center;
+    font-size: .12rem;
+    flex-wrap: wrap;
+}
+.withdraw-btn-box-chk.dis-hide{
+    display: none;
+}
+.withdraw-btn-box-chk.dis-show{
+    display: flex;
+}
+
+/**/
+.withdraw-btn-box-chk>p{
+    position: relative;
+    height: .15rem;
+    width: 0.15rem;
+}
+.withdraw-btn-box-chk>p>input{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index:10;
+    opacity: 0;
+}
+.withdraw-btn-box-chk>p{
+ margin-right: .1rem;
+}
+
+.withdraw-btn-box-chk>p>i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px  solid #92375f;
+    border-radius: .04rem;
+    z-index: 1;
+   
+}
+.withdraw-btn-box-chk>p>i.active{
+    background: url("../img/icons/zhuce_tongyi@2x.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.withdraw-btn{
+    margin: .1rem 0;
+}
+.withdraw-btn>a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: .45rem;
+    border-radius: .04rem;
+    background: #92375f;
+    color: #fff;
+    font-size: .18rem;
+}
+
+.account_balance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.account_balance>span{
+    margin-left: .1rem;
+    color: #f24d1b;
+}
+
+footer{
+    margin-top: .5rem;
+    
+}
+footer>div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #999;
+    font-size: .12rem;
+}
+
+
+/*提现模态框*/
+
+/*模态框*/
+.withdraw-box .modal-select{
+    position: fixed;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    z-index: 1000;
+}
+
+.withdraw-box  .close-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.withdraw-box  .modal-content{
+    background: #fff;
+    width: 88vw;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -44vw;
+    border-radius: .04rem;
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:  0 .08rem;
+    padding-top: .5rem; 
+
+}
+.withdraw-box  .modal-content .img-box{
+    position: absolute;
+    top: -30%;
+    width: .8rem;
+    height: .8rem;
+}
+.withdraw-box  .modal-content .img-box>img{
+    display: block;
+    width: 100%;
+}
+.withdraw-box  .modal-content h3{
+    font-size: .2rem;
+    margin-bottom: .1rem;
+}
+.withdraw-box  .modal-content>p{
+    color: #999;
+    margin-bottom: .1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.withdraw-box  .modal-content>p>span{
+    color: #f24d1b;
+   
+}
+
+/*.modal-content>div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+.modal-content>div>p{
+    display: flex;
+    height: .45rem;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: pointer;
+}
+.modal-content>div>p:last-child{
+    border-bottom: 0;
+}*/
+
+/*模态框*/

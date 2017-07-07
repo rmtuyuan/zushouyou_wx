@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>租手游-提现</title>
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta name="keywords" content="" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <!--   <link rel="icon" href="img/favicon.ico"/> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/money.css" />
+
+</head>
+
+<body class="my-wallet withdraw-box">
+    <div class="withdraw-title">
+        <div class="active" data-item="dis-hide"><span>普通提现</span></div>
+        <div data-item="dis-show"><span>快速提现</span></div>
+    </div>
+    <div class="withdraw-content">
+        <div class="container">
+             <div class="withdraw-item">
+                <p>提现账号人姓名</p>
+                <input type="text" name="username" value="" placeholder="提现账号人姓名">
+            </div>
+            <div class="withdraw-item">
+                <p>提现账号</p>
+                <input type="number" name="card" min="0" value="" placeholder="请输入提现账号">
+            </div>
+            <div class="withdraw-item">
+                <p>开户行</p>
+                <input type="text" name="bank" value="" placeholder="请输入开户行名称">
+            </div>
+            <div class="withdraw-item">
+                <p>开户地</p>
+                <input type="text" name="place" value="" placeholder="例如:中国银行石景支行">
+            </div>
+            <div class="withdraw-item">
+                <p>备注</p>
+                <input type="text" class="actived" name="remarks" value="" placeholder="请输入备注信息">
+            </div>
+        </div>
+
+    </div>
+    <div class="withdraw-content">
+        <div class="container">
+            <div class="withdraw-item">
+                <p>提现金额</p>
+                <input type="number" class="money-input" name="money" value="" placeholder="请输入提现金额">
+            </div>
+
+        </div>
+
+    </div>
+    <div class="withdraw-btn-box">
+        <div class="container">
+            <div class="withdraw-btn-box-chk dis-hide ">
+                <p> <input type="checkbox" class="my-checkbox"> <i></i></p>
+                提现申请会在<span class="text-purple">3</span>小时内处理,平台收取提现金额<span class="text-purple">5%</span>作为手续费
+            </div>
+            <div class="withdraw-btn"><a href="#" >确认提现</a></div>
+            <p class="account_balance">账号余额 <span class="money-box">0元</span></p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-info">
+            提现申请会在3个工作日内有结果,请注意查看消息提示
+        </div>
+    </footer>
+    <div class="modal-select">
+        <div class="modal-content">
+            <div class="img-box">
+                <img src="img/icons/tixian_tanchuangicon@2x.png" alt="">
+            </div>
+            <h3>提现申请已提交</h3>
+            <p>提前申请会在 <span>3</span>个工作日内有结果，请注意查看消息提示</p>
+        </div>
+        <div class="close-modal">
+
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+     <script src="js/jquery.cookie.js"></script>
+    <script src="m_js/clipboard.min.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="m_js/public.js"></script>
+    <script src="m_js/withdraw_money.js"></script>
+    <script>
+       
+    </script>
+</body>
+
+</html>
